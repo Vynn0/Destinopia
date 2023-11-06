@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<BorderPane prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <BorderPane prefHeight="314.0" prefWidth="565.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <right>
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: blue;" BorderPane.alignment="CENTER" />
+         </right>
+         <center>
+            <AnchorPane prefHeight="656.0" prefWidth="701.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button layoutX="335.0" layoutY="413.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="126.0" styleClass="my-button" stylesheets="@styles.css" text="Login" />
+                  <PasswordField layoutX="291.0" layoutY="328.0" prefHeight="30.0" prefWidth="210.0" />
+                  <ImageView fitHeight="266.0" fitWidth="332.0" layoutX="232.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="232.0" AnchorPane.rightAnchor="232.79999999999995" AnchorPane.topAnchor="0.0">
+                     <image>
+                        <Image url="@Model/54fe405c-2cb1-4211-86db-253b11016deb.jpeg" />
+                     </image>
+                  </ImageView>
+                  <TextField layoutX="290.0" layoutY="249.0" prefHeight="30.0" prefWidth="210.0" />
+                  <Text layoutX="395.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot password">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </center>
+   <top>
+      <Pane prefHeight="33.0" prefWidth="600.0" style="-fx-background-color: #55B3C0;" BorderPane.alignment="CENTER" />
+   </top>
+   <left>
+      <Pane prefHeight="314.0" prefWidth="42.0" style="-fx-background-color: #55B3C0;" BorderPane.alignment="CENTER" />
+   </left>
+   <bottom>
+      <Pane prefHeight="30.0" prefWidth="600.0" style="-fx-background-color: #55B3C0;" BorderPane.alignment="CENTER" />
+   </bottom>
+   <right>
+      <Pane prefHeight="336.0" prefWidth="44.0" style="-fx-background-color: #55B3C0;" BorderPane.alignment="CENTER" />
+   </right>
+</BorderPane>
