@@ -1,13 +1,4 @@
-.my-button {
-    -fx-background-color: rgb(246, 246, 246);
-    -fx-text-fill: black;
-    -fx-font-size: 10px;
-    -fx-padding: 10px 20px;
-    /* -fx-border-color: rgb(246, 246, 246); */
-    -fx-border-radius: 50px;
-    /* -fx-box-shadow: 5px 10px; */
-}
-
-.my-button:hover {
-    -fx-background-color: #d6d6d6;
+#LoginButton {
+    --fx-background-color: red;
+    --fx-box-shadow: 5px 10px;
 }

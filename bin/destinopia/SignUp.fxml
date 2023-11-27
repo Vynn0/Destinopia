@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="950.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="destinopia.LoginController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="950.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="destinopia.RegisterController">
    <children>
       <ImageView fitHeight="750.0" fitWidth="360.0" layoutX="590.0" pickOnBounds="true">
          <image>
@@ -21,30 +21,30 @@
             <Image url="@Resource/destinopia-high-resolution-logo%201.png" />
          </image>
       </ImageView>
-      <TextField fx:id="user_field" layoutX="116.0" layoutY="330.0" prefHeight="55.0" prefWidth="400.0" promptText="Email">
+      <TextField fx:id="email_field" layoutX="116.0" layoutY="360.0" prefHeight="55.0" prefWidth="400.0" promptText="Email">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
-      <PasswordField fx:id="pass_field" layoutX="116.0" layoutY="431.0" prefHeight="55.0" prefWidth="400.0" promptText="Password">
+      <PasswordField fx:id="pass_field" layoutX="116.0" layoutY="445.0" prefHeight="55.0" prefWidth="400.0" promptText="Password">
          <font>
             <Font size="14.0" />
          </font>
       </PasswordField>
-      <Text layoutX="394.0" layoutY="502.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot Password">
-         <font>
-            <Font name="Times New Roman" size="18.0" />
-         </font>
-      </Text>
-      <Button fx:id="login_button" layoutX="278.0" layoutY="530.0" mnemonicParsing="false" onAction="#loginCheck" styleClass="LoginButton" stylesheets="@styles.css" text="LOGIN">
+      <Button fx:id="signup_button" layoutX="278.0" layoutY="567.0" mnemonicParsing="false" onAction="#addRecord" text="SIGNUP">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Text fx:id="signup_text" fill="#13a47d" layoutX="202.0" layoutY="658.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an account? Sign up">
+      <Text fx:id="login_text" fill="#13a47d" layoutX="166.0" layoutY="693.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already have an account? Log in instead!">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>
       </Text>
+      <TextField fx:id="user_field" layoutX="116.0" layoutY="276.0" prefHeight="55.0" prefWidth="400.0" promptText="Username">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
    </children>
 </Pane>
