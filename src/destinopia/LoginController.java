@@ -1,10 +1,17 @@
 package destinopia;
 
+import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import javafx.scene.Node;
 
 public class LoginController {
     @FXML
@@ -21,17 +28,31 @@ public class LoginController {
     }
 
     @FXML
-    private void loginCheck(ActionEvent event) {
+    protected void loginCheck(ActionEvent event) {
         String username = user_field.getText();
         String password = pass_field.getText();
 
+        Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
         if (dataService.loginCheck(username, password)) {
             System.out.println("Login successful!");
-            // Redirect to the main application or perform other actions
+            openMainMenu(primaryStage);
         } else {
             System.out.println("Invalid login credentials.");
-            // Show an error message or perform other actions
         }
     }
 
+    protected void openMainMenu(Stage primaryStage) {
+    try {
+        Parent mainMenuRoot = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
+        Scene mainMenuScene = new Scene(mainMenuRoot);
+
+        primaryStage.setScene(mainMenuScene);
+        primaryStage.setTitle("Main Menu Destinopia");
+        primaryStage.setResizable(false);
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+
+    }
 }

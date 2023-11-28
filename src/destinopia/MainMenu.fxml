@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonBar?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="destinopia.Controller">
-    <children>
-        <Label fx:id="label" text="Label" />
-      <ButtonBar prefHeight="40.0" prefWidth="200.0">
-         <buttons>
-            <ButtonBar prefHeight="40.0" prefWidth="200.0">
-              <buttons>
-                <Button mnemonicParsing="false" text="Button" />
-              </buttons>
-            </ButtonBar>
-         </buttons>
-      </ButtonBar>
-    </children>
-</StackPane>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="destinopia.LoginController">
+   <children>
+      <Pane layoutX="14.0" layoutY="11.0" prefHeight="695.0" prefWidth="110.0" style="-fx-background-color: #69DAAE;" />
+      <Pane layoutX="162.0" layoutY="11.0" prefHeight="200.0" prefWidth="489.0" style="-fx-background-color: #69DAAE;">
+         <children>
+            <TextField layoutX="50.0" layoutY="21.0" prefHeight="32.0" prefWidth="351.0" promptText="Search" />
+            <TextField layoutX="50.0" layoutY="84.0" prefHeight="32.0" prefWidth="148.0" promptText="Check In" />
+            <TextField layoutX="50.0" layoutY="147.0" prefHeight="32.0" prefWidth="351.0" promptText="Ticket" />
+            <TextField layoutX="198.0" layoutY="84.0" prefHeight="32.0" prefWidth="148.0" promptText="Check Out" />
+         </children>
+      </Pane>
+   </children>
+</Pane>

@@ -1,16 +1,11 @@
 package destinopia;
 
-import destinopia.LoginController;
-import destinopia.Model.Login;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
@@ -24,15 +19,20 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
         Parent root = loader.load();
 
+        LoginController loginController = loader.getController();
+
         // RegisterController controller = loader.getController();
 
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Login Destinopia");
+        primaryStage.setResizable(false);
         primaryStage.show();
 
         Text signupText = (Text) scene.lookup("#signup_text");
         Button loginButton = (Button) scene.lookup("#login_button");
+
+        loginButton.setOnAction(event -> loginController.loginCheck(event));
 
         signupText.setOnMouseClicked(event -> {
             try {
@@ -47,6 +47,8 @@ public class Main extends Application {
                 e.printStackTrace();
             }
         });
+
+
     }
 
     public static void main(String[] args) {
