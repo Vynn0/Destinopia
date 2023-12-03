@@ -1,3 +1,4 @@
+![destinopia-high-resolution-logo 1](https://github.com/Vynn0/Destinopia/assets/121730359/76cec072-ccd1-4880-87a2-33309e078ba1)
 Tim Developer Aplikasi
 
 Nama Kelompok: Berdasi (Bergerak dengan aksi)
