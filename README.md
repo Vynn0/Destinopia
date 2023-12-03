@@ -1,18 +1,18 @@
-## Getting Started
+![destinopia-high-resolution-logo 1](https://github.com/Vynn0/Destinopia/assets/121730359/76cec072-ccd1-4880-87a2-33309e078ba1)
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Tim Developer Aplikasi
 
-## Folder Structure
+Nama Kelompok: Berdasi (Bergerak dengan aksi)
 
-The workspace contains two folders by default, where:
+Analyst: Fayed Yamani (2022071017)
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Programmer: Halvino Iqbal Nataprawira (2022071019)
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Technical Writer: Juan Rexy Theresius Pratama (2022071035)
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+Anggota:
+Fayed Yamani
+Halvino Iqbal Nataprawira
+Juan Rexy Theresius Pratama
 
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Destinopia adalah aplikasi perjalanan inovatif yang menghadirkan pengalaman unik dalam merencanakan dan menjalani perjalanan wisata. Dengan berbagai fitur, Destinopia dapat membantu user dalam menjelajahi dunia dengan lebih nyaman, cerdas, dan menyenangkan.
