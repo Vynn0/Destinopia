@@ -1,4 +1,4 @@
-package destinopia;
+package destinopia.Model;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -21,7 +21,7 @@ public class DataService {
         }
     }
 
-    public void addRecord(String name, String password, String email) {
+    public void addData(String name, String password, String email) {
         try {
             String query = "INSERT INTO user (username, password, email) VALUES (?, ?, ?)";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
@@ -43,13 +43,10 @@ public class DataService {
             preparedStatement.setString(2, password);
             ResultSet resultSet = preparedStatement.executeQuery();
 
-            // If there is a matching record, return true
             return resultSet.next();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-        // If an exception occurs or there is no matching record, return false
         return false;
     }
 

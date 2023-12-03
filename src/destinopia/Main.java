@@ -9,6 +9,8 @@ import javafx.scene.control.Button;
 
 import java.io.IOException;
 
+import destinopia.Controller.LoginController;
+import destinopia.Model.DataService;
 import javafx.scene.text.Text;
 
 public class Main extends Application {
@@ -16,7 +18,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Login.fxml"));
         Parent root = loader.load();
 
         LoginController loginController = loader.getController();
@@ -34,19 +36,19 @@ public class Main extends Application {
 
         loginButton.setOnAction(event -> loginController.loginCheck(event));
 
-        signupText.setOnMouseClicked(event -> {
-            try {
-                Parent newRoot = FXMLLoader.load(getClass().getResource("SignUp.fxml"));
-                Scene newScene = new Scene(newRoot);
+        // signupText.setOnMouseClicked(event -> {
+        //     try {
+        //         Parent newRoot = FXMLLoader.load(getClass().getResource("view/SignUp.fxml"));
+        //         Scene newScene = new Scene(newRoot);
 
-                primaryStage.setScene(newScene);
+        //         primaryStage.setScene(newScene);
 
-                primaryStage.setTitle("Register Destinopia");
-                primaryStage.setResizable(false);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
+        //         primaryStage.setTitle("Register Destinopia");
+        //         primaryStage.setResizable(false);
+        //     } catch (IOException e) {
+        //         e.printStackTrace();
+        //     }
+        // });
 
 
     }

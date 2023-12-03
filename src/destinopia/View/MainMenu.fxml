@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="destinopia.Controller.LoginController">
+   <children>
+      <Pane layoutX="14.0" layoutY="11.0" prefHeight="695.0" prefWidth="80.0" style="-fx-background-color: #69DAAE;">
+         <children>
+            <ImageView fitHeight="49.0" fitWidth="65.0" layoutX="16.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Resource/teenyicons_home-outline.png" />
+               </image>
+            </ImageView>
+         </children></Pane>
+      <Pane layoutX="119.0" layoutY="11.0" prefHeight="200.0" prefWidth="489.0" style="-fx-background-color: #69DAAE;">
+         <children>
+            <TextField layoutX="50.0" layoutY="21.0" prefHeight="32.0" prefWidth="351.0" promptText="Search" />
+            <TextField layoutX="50.0" layoutY="84.0" prefHeight="32.0" prefWidth="148.0" promptText="Check In" />
+            <TextField layoutX="50.0" layoutY="147.0" prefHeight="32.0" prefWidth="351.0" promptText="Ticket" />
+            <TextField layoutX="198.0" layoutY="84.0" prefHeight="32.0" prefWidth="148.0" promptText="Check Out" />
+         </children>
+      </Pane>
+   </children>
+</Pane>
