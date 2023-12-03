@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="950.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="destinopia.Controller.LoginController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="950.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="destinopia.Controller.LoginController">
    <children>
       <ImageView fitHeight="750.0" fitWidth="360.0" layoutX="590.0" pickOnBounds="true">
          <image>
@@ -41,7 +41,12 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Text fx:id="signup_text" fill="#13a47d" layoutX="202.0" layoutY="658.0" strokeType="OUTSIDE" onMouseClicked="#gotoSignUp" strokeWidth="0.0" text="Don't have an account? Sign up">
+      <Text fx:id="signup_text" fill="#13a47d" layoutX="202.0" layoutY="658.0" onMouseClicked="#gotoSignUp" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an account? Sign up">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="loginStatusLabel" fill="#c90c0c" layoutX="184.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid Login Credentials, try again!" visible="false">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>

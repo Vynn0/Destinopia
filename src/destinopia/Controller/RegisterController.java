@@ -7,12 +7,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 import destinopia.Model.DataService;
 
@@ -26,6 +24,9 @@ public class RegisterController {
     @FXML
     private TextField email_field;
 
+    @FXML
+    private Text addDataLabel;
+
     private DataService dataService = new DataService();
 
     @FXML
@@ -35,6 +36,7 @@ public class RegisterController {
         String email = email_field.getText();
 
         dataService.addData(name, password, email);
+        addDataLabel.setVisible(true);
     }
 
     public void gotoLogin(MouseEvent event) {
@@ -42,7 +44,7 @@ public class RegisterController {
         Parent mainMenuRoot = FXMLLoader.load(getClass().getResource("/destinopia/view/Login.fxml"));
         Scene mainMenuScene = new Scene(mainMenuRoot);
 
-        // Mengambil stage dari source event, yaitu scene dan window tersebut yang terasosiasi dari text
+        // Mengambil stage dari source event, yaitu scene dan window tersebut yang terasosiasi dari MouseEvent 'event'
         Stage primaryStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         primaryStage.setScene(mainMenuScene);
         primaryStage.setTitle("Login Destinopia");

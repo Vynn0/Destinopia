@@ -1,10 +1,12 @@
 package destinopia.Model;
 
+import destinopia.Model.Session;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.SQLException;   
 
 public class DataService {
     private Connection connection;
@@ -43,7 +45,10 @@ public class DataService {
             preparedStatement.setString(2, password);
             ResultSet resultSet = preparedStatement.executeQuery();
 
-            return resultSet.next();
+            if (resultSet.next()) {
+                Session.setLoggedName(name);
+                return true;
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
