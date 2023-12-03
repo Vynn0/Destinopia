@@ -1,4 +1,4 @@
-1.	Tim Developer Aplikasi
+Tim Developer Aplikasi
 
 Nama Kelompok: Berdasi (Bergerak dengan aksi)
 
