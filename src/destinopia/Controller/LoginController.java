@@ -32,7 +32,6 @@ public class LoginController {
         dataService = new DataService();
     }
 
-    
     @FXML
     public void loginCheck(ActionEvent event) {
         String username = user_field.getText();
@@ -66,15 +65,15 @@ public class LoginController {
 
     public void openMainMenu(Stage primaryStage) {
     try {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/destinopia/view/MainMenu.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/destinopia/view/Dashboard.fxml"));
         Parent mainMenuRoot = loader.load();
         Scene mainMenuScene = new Scene(mainMenuRoot);
 
         primaryStage.setScene(mainMenuScene);
-        primaryStage.setTitle("Main Menu Destinopia");
+        primaryStage.setTitle("Dashboard Destinopia");
         primaryStage.setResizable(false);
 
-        MainMenuController mainMenuController = loader.getController();
+        DashboardController mainMenuController = loader.getController();
         mainMenuController.updateSessionName(Session.getLoggedName());
 
     } catch (IOException e) {

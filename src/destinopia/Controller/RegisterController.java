@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -27,6 +28,9 @@ public class RegisterController {
     @FXML
     private Text addDataLabel;
 
+    @FXML
+    private Text loginStatusLabel;
+
     private DataService dataService = new DataService();
 
     @FXML
@@ -35,8 +39,16 @@ public class RegisterController {
         String password = pass_field.getText();
         String email = email_field.getText();
 
-        dataService.addData(name, password, email);
-        addDataLabel.setVisible(true);
+        if (name.isEmpty() || password.isEmpty() || email.isEmpty()) {
+            addDataLabel.setVisible(true);
+            addDataLabel.setText("Please fill in all the required credentials.");
+            addDataLabel.setFill(Color.RED);
+        } else {
+            dataService.addData(name, password, email);
+            addDataLabel.setVisible(true);
+            addDataLabel.setText("Registration Success!");
+            addDataLabel.setFill(Color.web("#1ac70c"));
+        }
     }
 
     public void gotoLogin(MouseEvent event) {
