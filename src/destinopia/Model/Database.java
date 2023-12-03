@@ -38,6 +38,7 @@ public class Database {
         }
     }
 
+    // Login Validation
     public boolean loginCheck(String name, String password) {
         try {
             String query = "SELECT * FROM user WHERE username = ? AND password = ?";
@@ -57,28 +58,32 @@ public class Database {
         return false;
     }
 
-    public void showData() {
-        try {
-            String query = "SELECT * FROM user";
-            PreparedStatement preparedStatement = connection.prepareStatement(query);
-            ResultSet resultSet = preparedStatement.executeQuery();
+    // Unused
 
-            while (resultSet.next()) {
-                System.out.println(
-                        "Name: " + resultSet.getString("username") + ", Email: " + resultSet.getString("email"));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
+    // public void showData() {
+    //     try {
+    //         String query = "SELECT * FROM user";
+    //         PreparedStatement preparedStatement = connection.prepareStatement(query);
+    //         ResultSet resultSet = preparedStatement.executeQuery();
 
-    public void closeConnection() {
-        try {
-            if (connection != null && !connection.isClosed()) {
-                connection.close();
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
+    //         while (resultSet.next()) {
+    //             System.out.println(
+    //                     "Name: " + resultSet.getString("username") + ", Email: " + resultSet.getString("email"));
+    //         }
+    //     } catch (SQLException e) {
+    //         e.printStackTrace();
+    //     }
+    // }
+
+    // Unused
+    
+    // public void closeConnection() {
+    //     try {
+    //         if (connection != null && !connection.isClosed()) {
+    //             connection.close();
+    //         }
+    //     } catch (SQLException e) {
+    //         e.printStackTrace();
+    //     }
+    // }
 }

@@ -66,8 +66,9 @@ public class RegisterController {
         }
     }   
 
-    @FXML
-    private void showData() {
-        DBConnection.showData();
-    }
+    // Unused
+    // @FXML
+    // private void showData() {
+    //     DBConnection.showData();
+    // }
 }
