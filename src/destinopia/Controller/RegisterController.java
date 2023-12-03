@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-import destinopia.Model.DataService;
+import destinopia.Model.Database;
 
 public class RegisterController {
     @FXML
@@ -31,7 +31,7 @@ public class RegisterController {
     @FXML
     private Text loginStatusLabel;
 
-    private DataService dataService = new DataService();
+    private Database DBConnection = new Database();
 
     @FXML
     private void addRecord() {
@@ -44,7 +44,7 @@ public class RegisterController {
             addDataLabel.setText("Please fill in all the required credentials.");
             addDataLabel.setFill(Color.RED);
         } else {
-            dataService.addData(name, password, email);
+            DBConnection.addData(name, password, email);
             addDataLabel.setVisible(true);
             addDataLabel.setText("Registration Success!");
             addDataLabel.setFill(Color.web("#1ac70c"));
@@ -52,22 +52,22 @@ public class RegisterController {
     }
 
     public void gotoLogin(MouseEvent event) {
-    try {
-        Parent mainMenuRoot = FXMLLoader.load(getClass().getResource("/destinopia/view/Login.fxml"));
-        Scene mainMenuScene = new Scene(mainMenuRoot);
+        try {
+            Parent mainMenuRoot = FXMLLoader.load(getClass().getResource("/destinopia/view/Login.fxml"));
+            Scene mainMenuScene = new Scene(mainMenuRoot);
 
-        // Mengambil stage dari source event, yaitu scene dan window tersebut yang terasosiasi dari MouseEvent 'event'
-        Stage primaryStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-        primaryStage.setScene(mainMenuScene);
-        primaryStage.setTitle("Login Destinopia");
-        primaryStage.setResizable(false);
-    } catch (IOException e) {   
-        e.printStackTrace();
-    }
+            // Mengambil stage dari source event, yaitu scene dan window tersebut yang terasosiasi dari MouseEvent 'event'
+            Stage primaryStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+            primaryStage.setScene(mainMenuScene);
+            primaryStage.setTitle("Login Destinopia");
+            primaryStage.setResizable(false);
+        } catch (IOException e) {   
+            e.printStackTrace();
+        }
     }   
 
     @FXML
     private void showData() {
-        dataService.showData();
+        DBConnection.showData();
     }
 }

@@ -1,21 +1,20 @@
 package destinopia.Model;
 
-import destinopia.Model.Session;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;   
 
-public class DataService {
+public class Database {
     private Connection connection;
 
-    public DataService() {
-        establishConnection();
+    public Database() {
+        databaseConnection();
     }
 
-    private void establishConnection() {
+    // DB Connection
+    private void databaseConnection() {
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/destinopia", "root", "");
         } catch (SQLException e) {
@@ -23,10 +22,12 @@ public class DataService {
         }
     }
 
+    // Add data
     public void addData(String name, String password, String email) {
         try {
             String query = "INSERT INTO user (username, password, email) VALUES (?, ?, ?)";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
+            // Maybe add ID in here
             preparedStatement.setString(1, name);
             preparedStatement.setString(2, password);
             preparedStatement.setString(3, email);
@@ -41,6 +42,7 @@ public class DataService {
         try {
             String query = "SELECT * FROM user WHERE username = ? AND password = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
+            // Maybe add ID in here
             preparedStatement.setString(1, name);
             preparedStatement.setString(2, password);
             ResultSet resultSet = preparedStatement.executeQuery();

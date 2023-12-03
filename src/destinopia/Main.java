@@ -8,11 +8,8 @@ import javafx.stage.Stage;
 import javafx.scene.control.Button;
 
 import destinopia.Controller.LoginController;
-import destinopia.Model.DataService;
 
 public class Main extends Application {
-    private DataService dataService;
-
     @Override
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Login.fxml"));
