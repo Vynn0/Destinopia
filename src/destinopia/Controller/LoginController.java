@@ -36,9 +36,9 @@ public class LoginController {
     public void loginCheck(ActionEvent event) {
         String username = user_field.getText();
         String password = pass_field.getText();
-        
+
         Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        
+
         if (DBConnection.loginCheck(username, password)) {
             System.out.println("Login successful!");
             openMainMenu(primaryStage);
@@ -53,15 +53,16 @@ public class LoginController {
             Parent mainMenuRoot = FXMLLoader.load(getClass().getResource("/destinopia/view/SignUp.fxml"));
             Scene mainMenuScene = new Scene(mainMenuRoot);
 
-            // Mengambil stage dari source event, yaitu scene dan window tersebut yang terasosiasi dari MouseEvent 'event'
+            // Mengambil stage dari source event, yaitu scene dan window tersebut yang
+            // terasosiasi dari MouseEvent 'event'
             Stage primaryStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
             primaryStage.setScene(mainMenuScene);
             primaryStage.setTitle("Sign Up Destinopia");
             primaryStage.setResizable(false);
-        } catch (IOException e) {   
+        } catch (IOException e) {
             e.printStackTrace();
         }
-    }   
+    }
 
     public void openMainMenu(Stage primaryStage) {
         try {

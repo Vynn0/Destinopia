@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="destinopia.Controller.DashboardController">
+   <children>
+      <Pane layoutX="14.0" layoutY="11.0" prefHeight="695.0" prefWidth="80.0" style="-fx-background-color: #69DAAE; -fx-background-radius: 20px;">
+         <children>
+            <ImageView fitHeight="49.0" fitWidth="65.0" layoutX="16.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Resource/teenyicons_home-outline.png" />
+               </image>
+            </ImageView>
+         </children></Pane>
+      <Pane layoutX="120.0" layoutY="28.0" prefHeight="259.0" prefWidth="465.0" style="-fx-background-color: #69DAAE; -fx-background-radius: 10px;">
+         <children>
+            <TextField fx:id="locationField" layoutX="50.0" layoutY="21.0" prefHeight="32.0" prefWidth="351.0" promptText="Location (City/Country)" />
+            <TextField fx:id="transportField" layoutX="50.0" layoutY="84.0" prefHeight="32.0" prefWidth="351.0" promptText="Transport" />
+            <TextField fx:id="terminalField" layoutX="50.0" layoutY="147.0" prefHeight="32.0" prefWidth="351.0" promptText="Terminal" />
+            <Button fx:id="confirmButton" layoutX="178.0" layoutY="206.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="110.0" style="-fx-border-color: white; -fx-background-color: white; -fx-border-radius: 20px;" text="Confirm">
+               <font>
+                  <Font name="Garamond" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <ImageView fitHeight="49.0" fitWidth="65.0" layoutX="1201.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Resource/codicon_account.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="49.0" fitWidth="65.0" layoutX="1108.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Resource/uiw_bell.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="sessionLabel" layoutX="1108.0" layoutY="92.0" prefHeight="49.0" prefWidth="148.0" text="Label" wrapText="true">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font></Label>
+   </children>
+</Pane>

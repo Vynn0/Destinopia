@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 
@@ -20,6 +21,7 @@ public class Main extends Application {
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Login Destinopia");
+        primaryStage.getIcons().add(new Image("destinopia/View/Resource/destinopia-high-resolution-logo 1.png"));
         primaryStage.setResizable(false);
         primaryStage.show();
 

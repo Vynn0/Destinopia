@@ -1,0 +1,23 @@
+/* NOTE: Logsign = Login + SignUp */
+
+
+/* Login + Signup prompt/confirmation */
+
+
+.logsign_prompt:hover {
+    -fx-fill: #1cddaa;
+}
+
+/* Login + Signup button */
+
+.logsign_button {
+    -fx-background-color: white;
+    -fx-border-color: gray;
+    -fx-border-width: 0.2px;
+    -fx-border-radius: 10px;
+}
+
+.logsign_button:hover {
+    -fx-border-color: rgb(58, 58, 58);
+    -fx-border-width: 0.5px;
+}
