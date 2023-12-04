@@ -34,16 +34,20 @@ public class RegisterController {
     private Database DBConnection = new Database();
 
     @FXML
-    private void addRecord() {
+    private void addData() {
+        // Inisialiasi variable yang diambil dari FXML
         String name = user_field.getText();
         String password = pass_field.getText();
         String email = email_field.getText();
 
+        // Jika nama atau password atau email empty...
         if (name.isEmpty() || password.isEmpty() || email.isEmpty()) {
+            // Membuat label info error
             addDataLabel.setVisible(true);
             addDataLabel.setText("Please fill in all the required credentials.");
             addDataLabel.setFill(Color.RED);
         } else {
+            // Jika tidak, membuat label register sukses dan menambah data
             DBConnection.addData(name, password, email);
             addDataLabel.setVisible(true);
             addDataLabel.setText("Registration Success!");
@@ -53,22 +57,18 @@ public class RegisterController {
 
     public void gotoLogin(MouseEvent event) {
         try {
+            // Load FXML sebagai login.fxm.
             Parent mainMenuRoot = FXMLLoader.load(getClass().getResource("/destinopia/view/Login.fxml"));
+            // Inisialiasi menu scene dengan root sebelumnya
             Scene mainMenuScene = new Scene(mainMenuRoot);
 
-            // Mengambil stage dari source event, yaitu scene dan window tersebut yang terasosiasi dari MouseEvent 'event'
+            // Mengambil stage dari source event yang terasosiasi mouse event
             Stage primaryStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
             primaryStage.setScene(mainMenuScene);
-            primaryStage.setTitle("Login Destinopia");
-            primaryStage.setResizable(false);
-        } catch (IOException e) {   
+            primaryStage.setTitle("Login Destinopia"); // Title
+            primaryStage.setResizable(false); // Resizeable = False
+        } catch (IOException e) {
             e.printStackTrace();
         }
-    }   
-
-    // Unused
-    // @FXML
-    // private void showData() {
-    //     DBConnection.showData();
-    // }
+    }
 }

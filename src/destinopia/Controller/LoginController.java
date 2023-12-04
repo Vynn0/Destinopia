@@ -34,16 +34,20 @@ public class LoginController {
 
     @FXML
     public void loginCheck(ActionEvent event) {
+        // Mengambil username dan password dari field FXML
         String username = user_field.getText();
         String password = pass_field.getText();
 
+        // Mengambil stage dari source event, yang terasosiasi dari MouseEvent 'event'
         Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
+        // Jika konseksi database dengan login berhasil...
         if (DBConnection.loginCheck(username, password)) {
             System.out.println("Login successful!");
             openMainMenu(primaryStage);
+            // Jika tidak...
         } else {
-            System.out.println("Invalid login credentials.");
+            // Display info error
             loginStatusLabel.setVisible(true);
         }
     }
@@ -53,8 +57,7 @@ public class LoginController {
             Parent mainMenuRoot = FXMLLoader.load(getClass().getResource("/destinopia/view/SignUp.fxml"));
             Scene mainMenuScene = new Scene(mainMenuRoot);
 
-            // Mengambil stage dari source event, yaitu scene dan window tersebut yang
-            // terasosiasi dari MouseEvent 'event'
+            // Mengambil stage dari source event, yang terasosiasi dari MouseEvent 'event'
             Stage primaryStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
             primaryStage.setScene(mainMenuScene);
             primaryStage.setTitle("Sign Up Destinopia");
@@ -66,6 +69,7 @@ public class LoginController {
 
     public void openMainMenu(Stage primaryStage) {
         try {
+            // FXMLLoader Dashboard
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/destinopia/view/Dashboard.fxml"));
             Parent mainMenuRoot = loader.load();
             Scene mainMenuScene = new Scene(mainMenuRoot);
@@ -74,8 +78,11 @@ public class LoginController {
             primaryStage.setTitle("Dashboard Destinopia");
             primaryStage.setResizable(false);
 
-            DashboardController mainMenuController = loader.getController();
-            mainMenuController.updateSessionName(Session.getLoggedName());
+            // Loader dashboard controller
+            DashboardController dashboardController = loader.getController();
+
+            // Dari dashboard controller, update nama sesi menggunakan nama logged in
+            dashboardController.updateSessionName(Session.getLoggedName());
 
         } catch (IOException e) {
             e.printStackTrace();

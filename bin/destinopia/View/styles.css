@@ -21,3 +21,16 @@
     -fx-border-color: rgb(58, 58, 58);
     -fx-border-width: 0.5px;
 }
+
+.confirmButton {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-border-color: gray;
+    -fx-border-width: 0.2px;
+    -fx-border-radius: 10px;
+}
+
+.confirmButton:hover {
+    -fx-border-color: rgb(58, 58, 58);
+    -fx-border-width: 0.5px;
+}
