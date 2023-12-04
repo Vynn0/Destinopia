@@ -11,5 +11,7 @@ Things to do:
 - UI Finishing
 - Only show one ticket / Show ticket with dropdown on ticket.fxml (changeable logic)
 - Add data to table pemesanan (booking) with provided data one database (new table, dropdown pick) # OPTIONAL
+- Logout (Session disconnection)
+- Home back button logic
 
 3. PPT Presentasi

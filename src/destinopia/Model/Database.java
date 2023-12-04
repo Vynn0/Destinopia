@@ -15,7 +15,6 @@ public class Database {
     public Database() {
         databaseConnection();
     }
-
     // DB Connection
     private void databaseConnection() {
         try {
@@ -25,7 +24,6 @@ public class Database {
             e.printStackTrace();
         }
     }
-
     // Add data
     public void addData(String name, String password, String email) {
         // Hashed pass

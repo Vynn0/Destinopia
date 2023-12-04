@@ -60,7 +60,7 @@ public class LoginController {
             // Mengambil stage dari source event, yang terasosiasi dari MouseEvent 'event'
             Stage primaryStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
             primaryStage.setScene(mainMenuScene);
-            primaryStage.setTitle("Sign Up Destinopia");
+            primaryStage.setTitle("Destinopia Registration");
             primaryStage.setResizable(false);
         } catch (IOException e) {
             e.printStackTrace();
@@ -75,18 +75,17 @@ public class LoginController {
             Scene mainMenuScene = new Scene(mainMenuRoot);
 
             primaryStage.setScene(mainMenuScene);
-            primaryStage.setTitle("Dashboard Destinopia");
+            primaryStage.setTitle("Destinopia Dashboard");
             primaryStage.setResizable(false);
 
             // Loader dashboard controller
             DashboardController dashboardController = loader.getController();
 
             // Dari dashboard controller, update nama sesi menggunakan nama logged in
-            dashboardController.updateSessionName(Session.getLoggedName());
+            dashboardController.sessionUserName(Session.getLoggedName());
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 }

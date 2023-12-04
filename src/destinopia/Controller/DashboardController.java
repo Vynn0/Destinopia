@@ -63,7 +63,7 @@ public class DashboardController {
             // Mengambil stage dari source event yang terasosiasi mouse event
             Stage primaryStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
             primaryStage.setScene(mainMenuScene);
-            primaryStage.setTitle("Login Destinopia"); // Title
+            primaryStage.setTitle("View Ticket"); // Title
             primaryStage.setResizable(false); // Resizeable = False
         } catch (IOException e) {
             e.printStackTrace();
@@ -73,7 +73,7 @@ public class DashboardController {
     @FXML
     private Label sessionLabel;
 
-    public void updateSessionName(String sessionName) {
+    public void sessionUserName(String sessionName) {
         sessionLabel.setText("Welcome, " + sessionName + "!");
     }
 
