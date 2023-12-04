@@ -1,11 +1,18 @@
 package destinopia.Controller;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import destinopia.Model.Database;
+import java.io.IOException;
+
 
 public class DashboardController {
     @FXML
@@ -44,6 +51,22 @@ public class DashboardController {
             pemesananInfoLabel.setVisible(true);
             pemesananInfoLabel.setText("Booking success!");
             pemesananInfoLabel.setFill(Color.WHITE);
+        }
+    }
+
+    public void gotoTicket(MouseEvent event) {
+        try {
+            Parent mainMenuRoot = FXMLLoader.load(getClass().getResource("/destinopia/view/Ticket.fxml"));
+            // Inisialiasi menu scene dengan root sebelumnya
+            Scene mainMenuScene = new Scene(mainMenuRoot);
+
+            // Mengambil stage dari source event yang terasosiasi mouse event
+            Stage primaryStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+            primaryStage.setScene(mainMenuScene);
+            primaryStage.setTitle("Login Destinopia"); // Title
+            primaryStage.setResizable(false); // Resizeable = False
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

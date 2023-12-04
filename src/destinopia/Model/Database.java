@@ -50,23 +50,17 @@ public class Database {
 
     public void addPesanan(String location, String transport, String bandara, String terminal) {
         try {
-            // Membuat query sebagai string
             String query = "INSERT INTO pemesanan (location, transport, bandara, terminal) VALUES (?, ?, ?, ?)";
-            // Menyiapkan statement SQL dan melakukan koneksi ke database dengan query
             PreparedStatement preparedStatement = connection.prepareStatement(query);
-            // Maybe add ID in here
-            // Set string untuk urutan, dan parameter terakhir sebagai isi
             preparedStatement.setString(1, location);
             preparedStatement.setString(2, transport);
             preparedStatement.setString(3, bandara);
             preparedStatement.setString(4, terminal);
-
-            // Lakukan eksekusi
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
+    }    
 
     public String hashPass(String password) {
         try {
@@ -105,26 +99,5 @@ public class Database {
             e.printStackTrace();
         }
         return false;
-    }
-
-    // Add pemesanan
-    public void addDataPemesanan(String lokasi, String transportasi, String bandara, String terminal) {
-        try {
-            // Membuat query sebagai string
-            String query = "INSERT INTO user (lokasi, transportasi, bandara, terminal) VALUES (?, ?, ?, ?)";
-            // Menyiapkan statement SQL dan melakukan koneksi ke database dengan query
-            PreparedStatement preparedStatement = connection.prepareStatement(query);
-            // Maybe add ID in here
-            // Set string untuk urutan, dan parameter terakhir sebagai isi
-            preparedStatement.setString(1, lokasi);
-            preparedStatement.setString(2, transportasi);
-            preparedStatement.setString(3, bandara);
-            preparedStatement.setString(4, terminal);
-
-            // Lakukan eksekusi
-            preparedStatement.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
     }
 }

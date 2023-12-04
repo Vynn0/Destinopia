@@ -51,3 +51,18 @@
     -fx-border-color: rgb(58, 58, 58);
     -fx-border-width: 0.5px;
 }
+
+/* Home Button (Ticket) */
+
+.homeButton {
+    -fx-background-color: #69DAAE;
+    -fx-fill: #69DAAE;
+    -fx-background-radius: 10px;
+    -fx-border-width: 0.2px;
+    -fx-border-radius: 10px;
+}
+
+.homeButton:hover {
+    -fx-border-color: rgb(0, 0, 0);
+    -fx-border-width: 0.5px;
+}
