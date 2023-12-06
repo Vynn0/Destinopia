@@ -11,8 +11,9 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import destinopia.Model.Database;
-import java.io.IOException;
+import destinopia.Model.Session;
 
+import java.io.IOException;
 
 public class DashboardController {
     @FXML
@@ -39,6 +40,7 @@ public class DashboardController {
         String transport = transportField.getText();
         String bandara = bandaraField.getText();
         String terminal = terminalField.getText();
+        int userID = Session.getUserId();
 
         if (location.isEmpty() || transport.isEmpty() || bandara.isEmpty() || terminal.isEmpty()) {
             // Membuat label info error
@@ -47,7 +49,7 @@ public class DashboardController {
             pemesananInfoLabel.setFill(Color.RED);
         } else {
             // Jika tidak, membuat label register sukses dan menambah data
-            DBConnection.addPesanan(location, transport, bandara, terminal);
+            DBConnection.addPesanan(location, transport, bandara, terminal, userID);
             pemesananInfoLabel.setVisible(true);
             pemesananInfoLabel.setText("Booking success!");
             pemesananInfoLabel.setFill(Color.WHITE);
@@ -75,6 +77,10 @@ public class DashboardController {
 
     public void sessionUserName(String sessionName) {
         sessionLabel.setText("Welcome, " + sessionName + "!");
+    }
+
+    public void displayData(String location, String transport, String bandara, String terminal, int userID) {
+
     }
 
 }

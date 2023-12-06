@@ -44,6 +44,8 @@ public class LoginController {
         // Jika konseksi database dengan login berhasil...
         if (DBConnection.loginCheck(username, password)) {
             System.out.println("Login successful!");
+            int userID = Session.getUserId();
+            System.out.println(userID);
             openMainMenu(primaryStage);
             // Jika tidak...
         } else {

@@ -1,0 +1,17 @@
+Things to do:
+
+1. Perapihan dan Pelengkapan docs ( ??? / ??? )
+- Pelengkapan deskripsi
+- Blackbox
+- Syncing dengan coding
+
+2. Coding (Vino)
+- Session 
+- Add data to table pemesanan, and dependency on user ID Session
+- UI Finishing
+- Only show one ticket / Show ticket with dropdown on ticket.fxml (changeable logic)
+- Add data to table pemesanan (booking) with provided data one database (new table, dropdown pick) # OPTIONAL
+- Logout (Session disconnection)
+- Home back button logic
+
+3. PPT Presentasi

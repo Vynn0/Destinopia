@@ -15,6 +15,7 @@ public class Database {
     public Database() {
         databaseConnection();
     }
+
     // DB Connection
     private void databaseConnection() {
         try {
@@ -24,6 +25,7 @@ public class Database {
             e.printStackTrace();
         }
     }
+
     // Add data
     public void addData(String name, String password, String email) {
         // Hashed pass
@@ -46,19 +48,20 @@ public class Database {
         }
     }
 
-    public void addPesanan(String location, String transport, String bandara, String terminal) {
+    public void addPesanan(String location, String transport, String bandara, String terminal, int userID) {
         try {
-            String query = "INSERT INTO pemesanan (location, transport, bandara, terminal) VALUES (?, ?, ?, ?)";
+            String query = "INSERT INTO pemesanan (location, transport, bandara, terminal, userID) VALUES (?, ?, ?, ?, ?)";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, location);
             preparedStatement.setString(2, transport);
             preparedStatement.setString(3, bandara);
             preparedStatement.setString(4, terminal);
+            preparedStatement.setInt(5, userID);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }    
+    }
 
     public String hashPass(String password) {
         try {
@@ -90,7 +93,9 @@ public class Database {
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
+                int userID = resultSet.getInt("id");
                 Session.setLoggedName(name);
+                Session.setUserId(userID);
                 return true;
             }
         } catch (SQLException e) {

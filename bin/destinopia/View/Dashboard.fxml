@@ -8,31 +8,38 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="destinopia.Controller.DashboardController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="destinopia.Controller.DashboardController">
    <stylesheets>
       <URL value="@styles.css" />
    </stylesheets>
    <children>
-      <Pane layoutX="14.0" layoutY="11.0" prefHeight="695.0" prefWidth="80.0" style="-fx-background-color: #69DAAE; -fx-background-radius: 20px;">
+      <Pane layoutX="400.0" layoutY="202.0" prefHeight="359.0" prefWidth="460.0" style="-fx-background-color: #69DAAE; -fx-background-radius: 10px;">
          <children>
-            <ImageView fitHeight="49.0" fitWidth="65.0" layoutX="16.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Resource/teenyicons_home-outline.png" />
-               </image>
-            </ImageView>
-         </children></Pane>
-      <Pane layoutX="400.0" layoutY="202.0" prefHeight="316.0" prefWidth="460.0" style="-fx-background-color: #69DAAE; -fx-background-radius: 10px;">
-         <children>
-            <TextField fx:id="locationField" layoutX="50.0" layoutY="30.0" prefHeight="32.0" prefWidth="351.0" promptText="Location (City/Country)" />
-            <TextField fx:id="transportField" layoutX="50.0" layoutY="90.0" prefHeight="32.0" prefWidth="351.0" promptText="Transport" />
-            <TextField fx:id="bandaraField" layoutX="50.0" layoutY="147.0" prefHeight="32.0" prefWidth="351.0" promptText="Bandara" />
-            <Button fx:id="confirmButton" layoutX="175.0" layoutY="260.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="110.0" styleClass="confirmButton" stylesheets="@styles.css" text="Confirm">
+            <TextField fx:id="locationField" layoutX="50.0" layoutY="61.0" prefHeight="32.0" prefWidth="351.0" promptText="Location (City/Country)" />
+            <TextField fx:id="transportField" layoutX="50.0" layoutY="122.0" prefHeight="32.0" prefWidth="351.0" promptText="Transport" />
+            <TextField fx:id="bandaraField" layoutX="50.0" layoutY="188.0" prefHeight="32.0" prefWidth="351.0" promptText="Bandara" />
+            <Button fx:id="confirmButton" layoutX="175.0" layoutY="306.0" mnemonicParsing="false" onAction="#addPesanan" prefHeight="29.0" prefWidth="110.0" styleClass="confirmButton" stylesheets="@styles.css" text="Confirm">
                <font>
                   <Font name="Garamond" size="14.0" />
                </font>
             </Button>
-            <TextField fx:id="terminalField" layoutX="50.0" layoutY="203.0" prefHeight="32.0" prefWidth="351.0" promptText="Terminal" />
+            <TextField fx:id="terminalField" layoutX="50.0" layoutY="246.0" prefHeight="32.0" prefWidth="351.0" promptText="Terminal" />
+            <Pane fx:id="ticketButton" layoutX="401.0" layoutY="296.0" onMouseClicked="#gotoTicket" prefHeight="49.0" prefWidth="48.0" styleClass="ticketIcon" stylesheets="@styles.css">
+               <children>
+                  <ImageView fitHeight="32.0" fitWidth="24.0" layoutX="12.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Resource/🦆%20icon%20_Receipt_.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Text fx:id="pemesananInfoLabel" fill="WHITE" layoutX="50.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pemesanan Berhasil!" textAlignment="CENTER" visible="false" wrappingWidth="351.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
          </children>
       </Pane>
       <ImageView fitHeight="49.0" fitWidth="65.0" layoutX="1201.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
@@ -45,9 +52,22 @@
             <Image url="@Resource/uiw_bell.png" />
          </image>
       </ImageView>
-      <Label fx:id="sessionLabel" layoutX="400.0" layoutY="170.0" prefHeight="32.0" prefWidth="460.0" text="Label" wrapText="true">
+      <Label fx:id="sessionLabel" layoutX="400.0" layoutY="170.0" prefHeight="32.0" prefWidth="460.0" text="Welcome, USER!" wrapText="true">
          <font>
             <Font name="Times New Roman" size="14.0" />
          </font></Label>
+      <Pane layoutX="14.0" layoutY="11.0" prefHeight="695.0" prefWidth="80.0" style="-fx-background-color: #69DAAE; -fx-background-radius: 20px;">
+         <children>
+            <Pane fx:id="homeButton" layoutX="16.0" layoutY="24.0" prefHeight="49.0" prefWidth="48.0" styleClass="homeButton" stylesheets="@styles.css">
+               <children>
+                  <ImageView fitHeight="36.0" fitWidth="35.0" layoutX="7.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" styleClass="homeButton">
+                     <image>
+                        <Image url="@Resource/teenyicons_home-outline.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
    </children>
 </Pane>
