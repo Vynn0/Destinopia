@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.net.URL?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
@@ -23,5 +24,6 @@
             </Pane>
          </children>
       </Pane>
+      <ChoiceBox fx:id="pemesananCBX" layoutX="565.0" layoutY="147.0" prefWidth="150.0" />
    </children>
 </Pane>

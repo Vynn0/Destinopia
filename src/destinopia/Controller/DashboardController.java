@@ -12,6 +12,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import destinopia.Model.Database;
 import destinopia.Model.Session;
+import destinopia.Model.Pemesanan;
 
 import java.io.IOException;
 
@@ -61,11 +62,20 @@ public class DashboardController {
             Parent mainMenuRoot = FXMLLoader.load(getClass().getResource("/destinopia/view/Ticket.fxml"));
             // Inisialiasi menu scene dengan root sebelumnya
             Scene mainMenuScene = new Scene(mainMenuRoot);
+            int userID = Session.getUserId();
 
+            // Get UserID dari table pemesanan
+            // Pemesanan pemesananInstance = new Pemesanan();
+            // pemesananInstance.setPemesananID(userID);
+            // int pemesananID = pemesananInstance.getPemesananID();
+
+            Pemesanan.testPemesananID();
+            
             // Mengambil stage dari source event yang terasosiasi mouse event
             Stage primaryStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
             primaryStage.setScene(mainMenuScene);
             primaryStage.setTitle("View Ticket"); // Title
+            // System.out.println(pemesananID);
             primaryStage.setResizable(false); // Resizeable = False
         } catch (IOException e) {
             e.printStackTrace();
