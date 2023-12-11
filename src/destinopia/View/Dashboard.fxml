@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="destinopia.Controller.DashboardController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="destinopia.Controller.DashboardController">
    <stylesheets>
       <URL value="@styles.css" />
    </stylesheets>
@@ -18,8 +18,8 @@
       <Pane layoutX="400.0" layoutY="202.0" prefHeight="359.0" prefWidth="460.0" style="-fx-background-color: #69DAAE; -fx-background-radius: 10px;">
          <children>
             <TextField fx:id="locationField" layoutX="50.0" layoutY="61.0" prefHeight="32.0" prefWidth="351.0" promptText="Location (City/Country)" />
-            <TextField fx:id="transportField" layoutX="50.0" layoutY="122.0" prefHeight="32.0" prefWidth="351.0" promptText="Transport" />
-            <TextField fx:id="bandaraField" layoutX="50.0" layoutY="188.0" prefHeight="32.0" prefWidth="351.0" promptText="Bandara" />
+            <TextField fx:id="airlineField" layoutX="50.0" layoutY="122.0" prefHeight="32.0" prefWidth="351.0" promptText="Airline" />
+            <TextField fx:id="airportField" layoutX="50.0" layoutY="188.0" prefHeight="32.0" prefWidth="351.0" promptText="Airport" />
             <Button fx:id="confirmButton" layoutX="175.0" layoutY="306.0" mnemonicParsing="false" onAction="#addPesanan" prefHeight="29.0" prefWidth="110.0" styleClass="confirmButton" stylesheets="@styles.css" text="Confirm">
                <font>
                   <Font name="Garamond" size="14.0" />

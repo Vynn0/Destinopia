@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.net.URL?>
-<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="destinopia.Controller.DashboardController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="destinopia.Controller.TicketController">
     <stylesheets>
       <URL value="@styles.css" />
    </stylesheets>
    <children>
       <Pane layoutX="14.0" layoutY="11.0" prefHeight="695.0" prefWidth="80.0" style="-fx-background-color: #69DAAE; -fx-background-radius: 20px;">
          <children>
-            <Pane fx:id="homeButton" layoutX="16.0" layoutY="24.0" onMouseClicked="#gotoTicket" prefHeight="49.0" prefWidth="48.0" styleClass="homeButton" stylesheets="@styles.css">
+            <Pane fx:id="homeButton" layoutX="16.0" layoutY="24.0" prefHeight="49.0" prefWidth="48.0" styleClass="homeButton" stylesheets="@styles.css">
                <children>
                   <ImageView fitHeight="36.0" fitWidth="35.0" layoutX="7.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" styleClass="homeButton">
                      <image>
@@ -24,6 +27,46 @@
             </Pane>
          </children>
       </Pane>
-      <ChoiceBox fx:id="pemesananCBX" layoutX="565.0" layoutY="147.0" prefWidth="150.0" />
+      <Pane layoutX="373.0" layoutY="280.0" prefHeight="151.0" prefWidth="631.0" style="-fx-background-color: white; -fx-border-color: black;">
+         <children>
+            <ImageView fitHeight="26.0" fitWidth="85.0" layoutX="259.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Resource/Barcode.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="7.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passenger:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Label fx:id="userLabel" layoutX="8.0" layoutY="56.0" prefHeight="17.0" prefWidth="94.0" text="User" />
+            <Text layoutX="148.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Terminal:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Label fx:id="terminalLabel" layoutX="141.0" layoutY="56.0" prefHeight="17.0" prefWidth="94.0" text="TerminalLabel" />
+            <Text layoutX="310.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Airline:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text layoutX="459.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Airport:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Label fx:id="airlineLabel" layoutX="295.0" layoutY="57.0" prefHeight="17.0" prefWidth="94.0" text="AirlineLabel" />
+            <Label fx:id="airportLabel" layoutX="443.0" layoutY="55.0" prefHeight="17.0" prefWidth="94.0" text="AirportLabel" />
+            <Text layoutX="566.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Location:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Label fx:id="locationLabel" layoutX="538.0" layoutY="53.0" prefHeight="17.0" prefWidth="94.0" text="LocationLabel" />
+         </children>
+      </Pane>
+      <Button fx:id="nextButton" layoutX="963.0" layoutY="431.0" mnemonicParsing="false" onAction="#nextButtonClick" text="Next" />
+      <Button fx:id="previousButton" layoutX="373.0" layoutY="431.0" mnemonicParsing="false" onAction="#previousButtonClick" text="Previous" />
    </children>
 </Pane>

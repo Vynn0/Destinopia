@@ -83,7 +83,7 @@ public class LoginController {
             // Loader dashboard controller
             DashboardController dashboardController = loader.getController();
 
-            // Dari dashboard controller, update nama sesi menggunakan nama logged in
+            // Untuk dashboard controller, update nama sesi menggunakan nama logged in
             dashboardController.sessionUserName(Session.getLoggedName());
 
         } catch (IOException e) {
