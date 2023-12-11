@@ -36,7 +36,7 @@ public class DashboardController {
 
     private Database DBConnection = new Database();
 
-    // Tambah pemesanan
+    // Mengambil input dari user dan menjalankan fungsi addPesanan dari database
     @FXML
     private void addPesanan() {
         // Inisialiasi variable yang diambil dari FXML
@@ -72,20 +72,25 @@ public class DashboardController {
 
             try {
                 List<Pemesanan> pemesananList = DBConnection.getAllPemesanan(userID);
-                // Process pemesananList as needed
 
-                // Pass the data to the controller
-                TicketController ticketController = loader.getController();
-                ticketController.setPemesananList(pemesananList);
+                // Pengecekkan data
+                if (!pemesananList.isEmpty()) {
+
+                    // Pass the data to the controller
+                    TicketController ticketController = loader.getController();
+                    ticketController.setPemesananList(pemesananList);
+
+                    // Mengambil stage dari source event yang terasosiasi mouse event
+                    Stage primaryStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+                    primaryStage.setScene(mainMenuScene);
+                    primaryStage.setTitle("View Ticket"); // Title
+                    primaryStage.setResizable(false); // Resizeable = False
+                } else {
+                    System.out.println("No records found for user with ID " + userID);
+                }
             } catch (SQLException ex) {
                 ex.printStackTrace(); // Handle the exception appropriately
             }
-
-            // Mengambil stage dari source event yang terasosiasi mouse event
-            Stage primaryStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-            primaryStage.setScene(mainMenuScene);
-            primaryStage.setTitle("View Ticket"); // Title
-            primaryStage.setResizable(false); // Resizeable = False
         } catch (IOException e) {
             e.printStackTrace();
         }

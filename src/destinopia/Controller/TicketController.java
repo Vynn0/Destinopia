@@ -3,14 +3,16 @@ package destinopia.Controller;
 import java.util.List;
 
 import destinopia.Model.Pemesanan;
+import destinopia.Model.Session;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
 public class TicketController {
-    private int currentIndex = 0;
+    private int currentIndex = 0; // Index untuk id pada column
+
     @FXML
-    private Label locationLabel;
+    private Label locationLabel; // Label yang diambil dari ticket.fxml
 
     @FXML
     private Label airlineLabel;
@@ -21,6 +23,9 @@ public class TicketController {
     @FXML
     private Label terminalLabel;
 
+    @FXML
+    private Label userLabel;
+
     private List<Pemesanan> pemesananList;
 
     public void setPemesananList(List<Pemesanan> pemesananList) {
@@ -30,7 +35,8 @@ public class TicketController {
 
     public void setLabel() {
         if (!pemesananList.isEmpty()) {
-            Pemesanan pemesanan = pemesananList.get(currentIndex); // Assuming you want the first Pemesanan
+            Pemesanan pemesanan = pemesananList.get(currentIndex);
+            userLabel.setText(Session.getLoggedName());
             locationLabel.setText(pemesanan.getLocation());
             airlineLabel.setText(pemesanan.getAirline());
             airportLabel.setText(pemesanan.getAirport());
