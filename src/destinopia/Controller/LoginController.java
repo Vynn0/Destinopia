@@ -85,7 +85,6 @@ public class LoginController {
 
             // Untuk dashboard controller, update nama sesi menggunakan nama logged in
             dashboardController.sessionUserName(Session.getLoggedName());
-
         } catch (IOException e) {
             e.printStackTrace();
         }

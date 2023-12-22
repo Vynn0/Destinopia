@@ -11,6 +11,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import destinopia.Model.Database;
+import destinopia.Model.Navigation;
 import destinopia.Model.Session;
 import destinopia.Model.Pemesanan;
 
@@ -94,6 +95,12 @@ public class DashboardController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    public void gotoProfile(MouseEvent event) {
+        Navigation nav = new Navigation();
+        nav.gotoProfile(event);
     }
 
     @FXML

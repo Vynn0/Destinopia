@@ -3,6 +3,7 @@ package destinopia.Model;
 public class Session {
     private static String loggedUsername;
     private static int loggedUserId;
+    private static String loggedEmail;
 
     public static String getLoggedName() {
         return loggedUsername;
@@ -18,5 +19,13 @@ public class Session {
 
     public static void setUserId(int userId) {
         loggedUserId = userId;
+    }
+
+    public static String getLoggedEmail() {
+        return loggedEmail;
+    }
+
+    public static void setLoggedEmail(String email){
+        loggedEmail = email;
     }
 }

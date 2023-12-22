@@ -51,6 +51,22 @@ public class Database {
         }
     }
 
+    public void updateData(int userId, String newUsername, String newEmail) {
+        try {
+            String query = "UPDATE user SET username = ?, email = ? WHERE id = ?";
+            
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            
+            preparedStatement.setString(1, newUsername);
+            preparedStatement.setString(2, newEmail);
+            preparedStatement.setInt(3, userId);
+    
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void addPesanan(String location, String airline, String airport, String terminal, int userID) {
         try {
             String query = "INSERT INTO pemesanan (location, airline, airport, terminal, userID) VALUES (?, ?, ?, ?, ?)";
@@ -111,6 +127,7 @@ public class Database {
     // Login Validation
     public boolean loginCheck(String name, String password) {
         try {
+            String email;
             String hashedPassword = hashPass(password);
             String query = "SELECT * FROM user WHERE username = ? AND password = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
@@ -121,7 +138,9 @@ public class Database {
 
             if (resultSet.next()) {
                 int userID = resultSet.getInt("id");
+                email = resultSet.getString("email");
                 Session.setLoggedName(name);
+                Session.setLoggedEmail(email);
                 Session.setUserId(userID);
                 return true;
             }

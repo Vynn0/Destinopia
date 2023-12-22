@@ -4,9 +4,11 @@ import java.util.List;
 
 import destinopia.Model.Pemesanan;
 import destinopia.Model.Session;
+import destinopia.Model.Navigation;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 
 public class TicketController {
     private int currentIndex = 0; // Index untuk id pada column
@@ -58,5 +60,17 @@ public class TicketController {
             currentIndex = (currentIndex - 1) % pemesananList.size();
             setLabel();
         }
+    }
+
+    @FXML
+    public void gotoHome(MouseEvent event) {
+        Navigation nav = new Navigation();
+        nav.gotoHome(event);
+    }
+
+    @FXML
+    public void gotoProfile(MouseEvent event) {
+        Navigation nav = new Navigation();
+        nav.gotoProfile(event);
     }
 }
