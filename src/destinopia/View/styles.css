@@ -3,6 +3,14 @@
 
 /* Login + Signup prompt/confirmation */
 
+.root {
+    -fx-font-family: "Constantia";
+}
+
+.normalLabels {
+    -fx-font-size: 14px;
+}
+
 
 .logsign_prompt:hover {
     -fx-fill: #1cddaa;
@@ -65,4 +73,27 @@
 .homeButton:hover {
     -fx-border-color: rgb(0, 0, 0);
     -fx-border-width: 0.5px;
+}
+
+/* Ticket Next / Previous Button */
+
+.nextButton, .previousButton {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-border-color: gray;
+    -fx-border-width: 0.4px;
+    -fx-border-radius: 5px;
+    -fx-font-size: 14px;
+}
+
+.nextButton:hover, .previousButton:hover {
+    -fx-border-color: rgb(58, 58, 58);
+    -fx-border-width: 0.5px;
+    -fx-font-size: 14px;
+}
+
+/* Logout Label Hover */
+
+.logoutLabel:hover {
+    -fx-fill: #ff6e6e;
 }

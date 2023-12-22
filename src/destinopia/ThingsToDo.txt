@@ -6,12 +6,12 @@ Things to do:
 - Syncing dengan coding
 
 2. Coding (Vino)
-- Session 
-- Add data to table pemesanan, and dependency on user ID Session
+- Session (PARTIALLY DONE)
+- Add data to table pemesanan, and dependency on user ID Session (DONE)
 - UI Finishing
-- Only show one ticket / Show ticket with dropdown on ticket.fxml (changeable logic)
+- Only show one ticket / Show ticket with dropdown on ticket.fxml (changeable logic) (PARTIALLY DONE)
 - Add data to table pemesanan (booking) with provided data one database (new table, dropdown pick) # OPTIONAL
-- Logout (Session disconnection)
-- Home back button logic
+- Logout (Session disconnection) 
+- Home back button logic (DONE)
 
 3. PPT Presentasi

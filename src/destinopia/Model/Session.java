@@ -28,4 +28,10 @@ public class Session {
     public static void setLoggedEmail(String email){
         loggedEmail = email;
     }
+
+    public static void clearSession(){
+        loggedUsername = null;
+        loggedUserId = 0;
+        loggedEmail = null;
+    }
 }

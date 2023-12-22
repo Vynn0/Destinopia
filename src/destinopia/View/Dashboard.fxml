@@ -27,11 +27,7 @@
                   <Image url="@Resource/destinopia-high-resolution-logo%201.png" />
                </image>
             </ImageView>
-            <Label fx:id="sessionLabel" layoutX="21.0" layoutY="63.0" prefHeight="32.0" prefWidth="460.0" text="Welcome, USER!" wrapText="true">
-               <font>
-                  <Font name="Times New Roman" size="14.0" />
-               </font>
-            </Label>
+            <Label fx:id="sessionLabel" layoutX="21.0" layoutY="63.0" prefHeight="32.0" prefWidth="460.0" styleClass="normalLabels" text="Welcome, USER!" wrapText="true" />
          </children>
       </Pane>
       <Pane layoutX="424.0" layoutY="198.0" prefHeight="359.0" prefWidth="460.0" style="-fx-background-color: #69DAAE; -fx-background-radius: 10px;">

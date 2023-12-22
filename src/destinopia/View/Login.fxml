@@ -25,7 +25,7 @@
             <Image url="@Resource/destinopia-high-resolution-logo%201.png" />
          </image>
       </ImageView>
-      <TextField fx:id="user_field" layoutX="116.0" layoutY="330.0" prefHeight="55.0" prefWidth="400.0" promptText="Email" style="-fx-border-color: gray; -fx-border-width: 0.5px; -fx-background-color: white; -fx-border-radius: 5px;">
+      <TextField fx:id="user_field" layoutX="116.0" layoutY="330.0" prefHeight="55.0" prefWidth="400.0" promptText="Username" style="-fx-border-color: gray; -fx-border-width: 0.5px; -fx-background-color: white; -fx-border-radius: 5px;">
          <font>
             <Font size="14.0" />
          </font>
