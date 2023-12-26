@@ -77,7 +77,7 @@ public class DashboardController {
                 // Pengecekkan data
                 if (!pemesananList.isEmpty()) {
 
-                    // Pass the data to the controller
+                    // Pass ke controller
                     TicketController ticketController = loader.getController();
                     ticketController.setPemesananList(pemesananList);
 
@@ -97,7 +97,7 @@ public class DashboardController {
         }
     }
 
-    @FXML
+    @FXML // Fungsi goto profile dengan mengambil dari navigation
     public void gotoProfile(MouseEvent event) {
         Navigation nav = new Navigation();
         nav.gotoProfile(event);
@@ -106,6 +106,7 @@ public class DashboardController {
     @FXML
     private Label sessionLabel;
 
+    // Fungsi displayu dan set text nama session
     public void sessionUserName(String sessionName) {
         sessionLabel.setText("Welcome, " + sessionName + "!");
     }

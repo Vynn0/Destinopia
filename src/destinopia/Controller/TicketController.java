@@ -48,7 +48,7 @@ public class TicketController {
 
     @FXML
     private void nextButtonClick(ActionEvent event) {
-        if (pemesananList != null && !pemesananList.isEmpty()) {
+        if (pemesananList != null && !pemesananList.isEmpty()) {    
             currentIndex = (currentIndex + 1) % pemesananList.size();
             setLabel();
         }

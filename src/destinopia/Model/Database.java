@@ -95,7 +95,6 @@ public class Database {
             return hexString.toString(); // Return
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
-            // Handle exception or throw a custom exception
             return null;
         }
     }

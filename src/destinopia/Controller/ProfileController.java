@@ -26,41 +26,50 @@ public class ProfileController {
 
     private Database DBConnection = new Database();
 
+    // Fungsi display nama user session
     public void sessionUserNameProfile(String sessionName) {
         usernameTextField.setText(sessionName);
     }
 
+    // Fungsi display email user session
     public void sessionEmailProfile(String sessionEmail) {
         emailTextField.setText(sessionEmail);
     }
 
+    // Fungsi kembali ke dashboard
     @FXML
     public void gotoHome(MouseEvent event) {
         Navigation nav = new Navigation();
         nav.gotoHome(event);
     }
 
+    // Fungsi update data
     @FXML
     private void updateData() {
         String name = usernameTextField.getText();
         String email = emailTextField.getText();
         int userId = Session.getUserId();
 
+        // Jika nama atau email kosong
         if (name.isEmpty() || email.isEmpty()) {
             // Membuat label info error
             infoLabel.setVisible(true);
             infoLabel.setFill(Color.RED);
         } else {
+            // Display label
             infoLabel.setVisible(true);
             infoLabel.setText("Mengubah Data Berhasil!");
             infoLabel.setFill(Color.GREEN);
+            // Lakukan update data
             DBConnection.updateData(userId, name, email);
             Session.setLoggedName(name);
         }
     }
 
+    // Fungsi logout
     @FXML
     private void logOut(MouseEvent event) {
+        // Fungsi clear session dari class session
         Session.clearSession();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/destinopia/view/Login.fxml"));

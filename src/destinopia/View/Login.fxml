@@ -35,11 +35,6 @@
             <Font size="14.0" />
          </font>
       </PasswordField>
-      <Text layoutX="407.0" layoutY="500.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot Password">
-         <font>
-            <Font name="Times New Roman" size="16.0" />
-         </font>
-      </Text>
       <Button fx:id="login_button" layoutX="266.0" layoutY="525.0" mnemonicParsing="false" onAction="#loginCheck" prefHeight="45.0" prefWidth="100.0" styleClass="logsign_button" stylesheets="@styles.css" text="LOGIN">
          <font>
             <Font name="System Bold" size="17.0" />

@@ -17,7 +17,7 @@ import javafx.scene.Node;
 import javafx.scene.input.MouseEvent;
 
 public class LoginController {
-    @FXML
+    @FXML // Field diambil dari FXML
     private TextField user_field;
 
     @FXML
@@ -32,7 +32,7 @@ public class LoginController {
         DBConnection = new Database();
     }
 
-    @FXML
+    @FXML // Fungsi check login
     public void loginCheck(ActionEvent event) {
         // Mengambil username dan password dari field FXML
         String username = user_field.getText();
